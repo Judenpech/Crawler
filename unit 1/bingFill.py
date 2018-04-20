@@ -1,10 +1,10 @@
-# 百度提交搜索关键词
+# bing提交搜索关键词
 import requests
 
 
 def getHtml(url, keyword):
-    hds = {"headers": "Mozilla/5.0"}
-    kv = {"wd": keyword}#百度关键词提交接口
+    kv = {"q": keyword}  # bing关键词提交接口
+    hds = {"user-agent": "Mozilla/5.0"}
     try:
         r = requests.get(url, params=kv, headers=hds)
         print(r.request.url)
@@ -17,6 +17,6 @@ def getHtml(url, keyword):
 
 
 if __name__ == "__main__":
-    url = "http://www.baidu.com/s"
+    url = "http://cn.bing.com/search"
     keyword = "福建中医药大学"
     getHtml(url, keyword)

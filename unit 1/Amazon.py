@@ -3,7 +3,7 @@ import requests
 
 
 def getHtml(url):
-    kv = {"headers": "Mozilla/5.0"}
+    kv = {"user-agent": "Mozilla/5.0"}
     try:
         r = requests.get(url, headers=kv)
         r.raise_for_status()
