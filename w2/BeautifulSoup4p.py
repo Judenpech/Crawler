@@ -25,6 +25,21 @@ def useBS4():
     print(soup.a.string)  # 标签内非属性字符串
 
     # 基于bs4库的HTML内容遍历方法
+    print(soup.body.contents)  # .contents 子节点的列表
+    print(len(soup.body.contents))
+    print(soup.body.contents[1])
+
+    for child in soup.body.children:  # .children 子节点的迭代类型
+        print(child)
+    for child in soup.body.descendants:  # .descendants 子孙节点的迭代类型
+        print(child)
+
+    # .parent 节点的父亲标签
+    for parent in soup.a.parents:  # .parents 节点先辈标签的迭代类型，用于循环遍历先辈节点
+        if parent is None:
+            print(parent)
+        else:
+            print(parent.name)
 
 
 if __name__ == "__main__":
